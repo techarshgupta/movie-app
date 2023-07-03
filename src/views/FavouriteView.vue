@@ -24,6 +24,10 @@ const removeToFavourite = (movie: Movie) => {
   }
 };
 
+const getImageUrl = (mov:number) => {
+  return new URL(`../assets/images/${mov}.jpeg`, import.meta.url).href
+}
+
 </script>
 
 <template>
@@ -54,7 +58,7 @@ const removeToFavourite = (movie: Movie) => {
             <img
               alt="ecommerce"
               class="object-cover object-center w-full h-full block"
-              :src="`/src/assets/images/${idx + 1}.jpeg`"
+              :src="getImageUrl(idx+1)"
             />
           </div>
           <div class="w-full">
