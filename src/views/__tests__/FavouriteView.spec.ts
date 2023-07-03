@@ -15,7 +15,8 @@ describe("FavouriteView", () => {
 
   it("movie remove from local storage", () => {
     const mockId = "movie";
-    const mockJson = [{"Title":"Waterworld","Year":1995,"imdbID":"tt0189200"}];
+    const mockJson = [{ "Title": "Waterworld", "Year": 1995, "imdbID": "tt0189200" }];
+    // ts-ignore
     wrapper.vm.removeToFavourite({"Title":"Waterworld","Year":2001,"imdbID":"tt0381702"});
     expect(localStorage.getItem(mockId)).toEqual(JSON.stringify(mockJson));
   });
